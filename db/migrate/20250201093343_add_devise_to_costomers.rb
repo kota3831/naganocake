@@ -22,6 +22,7 @@ class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
       t.string :address, null: false
       t.string :telephone_number, null: false
       t.boolean :is_active, null: false
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
@@ -42,7 +43,7 @@ class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
 
 
       # Uncomment below if timestamps were not included in your original model.
-      t.timestamps null: false
+      # t.timestamps null: false
     end
 
     add_index :costomers, :email,                unique: true
@@ -56,4 +57,5 @@ class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
     # model already existed. Please edit below which fields you would like to remove in this migration.
     raise ActiveRecord::IrreversibleMigration
   end
+  
 end

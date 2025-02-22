@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
+class AddDeviseToCustomers < ActiveRecord::Migration[6.1]
   def self.up
-    create_table :costomers do |t|
+   create_table :customers do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -22,7 +22,6 @@ class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
       t.string :address, null: false
       t.string :telephone_number, null: false
       t.boolean :is_active, null: false
-
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
@@ -46,10 +45,10 @@ class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
       # t.timestamps null: false
     end
 
-    add_index :costomers, :email,                unique: true
-    add_index :costomers, :reset_password_token, unique: true
-    # add_index :costomers, :confirmation_token,   unique: true
-    # add_index :costomers, :unlock_token,         unique: true
+    add_index :customers, :email,                unique: true
+    add_index :customers, :reset_password_token, unique: true
+    # add_index :customers, :confirmation_token,   unique: true
+    # add_index :customers, :unlock_token,         unique: true
   end
 
   def self.down
@@ -57,5 +56,4 @@ class AddDeviseToCostomers < ActiveRecord::Migration[6.1]
     # model already existed. Please edit below which fields you would like to remove in this migration.
     raise ActiveRecord::IrreversibleMigration
   end
-  
 end

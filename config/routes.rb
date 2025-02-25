@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
- 
+
   devise_for :customers, skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
 
   namespace :public do
-    resources :items, only: [:index, :show]
+
   end
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   root to: 'public/homes#top'
   get '/about' => 'public/homes#about'
   get 'customers/mypage' => 'public/customers#show'
+  resources :items, only: [:index, :show]
 
 
 
